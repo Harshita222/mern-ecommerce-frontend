@@ -14,6 +14,7 @@ const Profile = () => {
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
 
+  const API = "https://mern-ecommerce-app-fjey.onrender.com";
   //get user data
   useEffect(() => {
     const { email, name, phone, address } = auth?.user;
@@ -27,7 +28,7 @@ const Profile = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.put("/api/v1/auth/profile", {
+      const { data } = await axios.put(`${API}/api/v1/auth/profile`, {
         name,
         email,
         password,

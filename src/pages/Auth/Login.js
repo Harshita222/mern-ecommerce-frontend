@@ -13,11 +13,12 @@ const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
+  const API = "https://mern-ecommerce-app-fjey.onrender.com";
   // form function
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("/api/v1/auth/login", {
+      const res = await axios.post(`${API}/api/v1/auth/login`, {
         email,
         password,
       });

@@ -3,6 +3,8 @@ import Layout from "./../components/Layout/Layout";
 import { useSearch } from "../context/search";
 const Search = () => {
   const [values, setValues] = useSearch();
+  
+  const API = "https://mern-ecommerce-app-fjey.onrender.com";
   return (
     <Layout title={"Search results"}>
       <div className="container">
@@ -17,7 +19,7 @@ const Search = () => {
             {values?.results.map((p) => (
               <div className="card m-2" style={{ width: "18rem" }}>
                 <img
-                  src={`/api/v1/product/product-photo/${p._id}`}
+                  src={`${API}/api/v1/product/product-photo/${p._id}`}
                   className="card-img-top"
                   alt={p.name}
                 />

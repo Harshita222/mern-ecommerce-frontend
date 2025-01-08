@@ -10,13 +10,14 @@ const ForgotPasssword = () => {
   const [newPassword, setNewPassword] = useState("");
   const [answer, setAnswer] = useState("");
 
+  const API = "https://mern-ecommerce-app-fjey.onrender.com";
   const navigate = useNavigate();
 
   // form function
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("/api/v1/auth/forgot-password", {
+      const res = await axios.post(`${API}/api/v1/auth/forgot-password`, {
         email,
         newPassword,
         answer,

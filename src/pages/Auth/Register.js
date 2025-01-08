@@ -13,11 +13,12 @@ const Register = () => {
   const [answer, setAnswer] = useState("");
   const navigate = useNavigate();
 
+  const API = "https://mern-ecommerce-app-fjey.onrender.com";
   // form function
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("/api/v1/auth/register", {
+      const res = await axios.post(`${API}/api/v1/auth/register`, {
         name,
         email,
         password,
